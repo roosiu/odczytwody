@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Odczyt wody KSM</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--CSS-->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="tooltip.css" />
+    <!--script-->
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/ui/1.13.0-rc.3/jquery-ui.min.js"
+      integrity="sha256-R6eRO29lbCyPGfninb/kjIXeRjMOqY3VWPVk6gMhREk="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div>
+      <header class="App-header" id="App-header">
+        <!--logo-->
+        <img src="logo.svg" class="App-logo" alt="logo" />
+        <!--start screen-->
+        <div class="start_button">
+          <p><span>Podaj odczyt</span></p>
+        </div>
+        <div class="start_button">
+          <button class="button-53" type="button" onclick="start()">
+            Start
+          </button>
+        </div>
+        <!--city select-->
+        <div id="div_1" class="hide">
+          <p>Wybierz miejscowość</p>
+          <div class="selectdiv">
+            <label>
+              <select id="address_val_1" onchange="check_text( 1 )">
+                <option value=""></option>
+                <option value="Gniewkowo">Gniewkowo</option>
+              </select>
+            </label>
+            <span
+              id="tooltip_1"
+              data-tooltip="Wybierz miejscowość"
+              data-flow="bottom"
+              class="hide"
+            ></span>
+            <button class="button-53 bsmall" onclick="btn_next( 1 )">
+              Dalej
+            </button>
+          </div>
+        </div>
+        <!--street select-->
+        <div id="div_2" class="hide">
+          <p>Wybierz ulicę</p>
+          <div class="selectdiv">
+            <label>
+              <select id="address_val_2">
+                <option value=""></option>
+                <option value="Dreckiego">Dreckiego</option>
+              </select>
+            </label>
+            <span
+              id="tooltip_2"
+              data-tooltip="Wybierz ulicę"
+              data-flow="bottom"
+              class="hide"
+            ></span>
+            <button class="button-53 bsmall" onclick="btn_next( 2 )">
+              Dalej
+            </button>
+            <button class="button-53 bsmall" onclick="btn_prev( 2 )">
+              Cofnij
+            </button>
+          </div>
+        </div>
+        <!--street number-->
+        <div id="div_3" class="hide">
+          <p>Wybierz numer budynku</p>
+          <div class="selectdiv">
+            <label>
+              <select id="address_val_3"></select>
+            </label>
+            <span
+              id="tooltip_3"
+              data-tooltip="Wybierz ulicę"
+              data-flow="bottom"
+              class="hide"
+            ></span>
+            <button class="button-53 bsmall" onclick="btn_next( 3 )">
+              Dalej
+            </button>
+            <button class="button-53 bsmall" onclick="btn_prev( 3 )">
+              Cofnij
+            </button>
+          </div>
+        </div>
+        <!--header end-->
+      </header>
+      <div id="responsecontainer"></div>
+      <!--footer-->
+      <div class="Footer">
+        Kujawska Spółdzielnia Mieszkaniowa w Inowrocławiu
+      </div>
+    </div>
+    <!--script-->
+    <script type="text/javascript" src="function.js" async></script>
+    <script type="text/javascript" src="mysql.js" async></script>
+  </body>
+</html>
