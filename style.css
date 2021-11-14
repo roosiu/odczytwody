@@ -28,7 +28,8 @@ code {
 }
 
 .App-header p {
-  color: #27aae1;
+  /*color: #27aae1;*/
+  color: #092b3a;
   font-size: larger !important;
   font-weight: lighter;
   letter-spacing: 2pt;
@@ -163,6 +164,26 @@ select::-ms-expand {
 
   display: block;
   width: 100%;
+  height: 50px;
+  margin: 5px 0px;
+  padding: 0px 24px;
+  font-size: 16px;
+  line-height: 1.75;
+  color: #333;
+  background-color: #ffffff;
+  background-image: none;
+  border: 1px solid #cccccc;
+  -ms-word-break: normal;
+  word-break: normal;
+}
+.input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  /* Add some styling */
+  align-items: center;
+  display: block;
+  width: 80%;
   height: 50px;
   margin: 5px 0px;
   padding: 0px 24px;

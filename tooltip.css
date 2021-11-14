@@ -52,12 +52,13 @@
   transform: translate(-50%, -4px);
 }
 [data-tooltip][data-flow="bottom"]::before {
-  top: 100%;
+  margin-top: -10px;
   border-top-width: 0;
   border-bottom-color: #cc1010;
 }
 [data-tooltip][data-flow="bottom"]::after {
-  top: calc(100% + 5px);
+  margin-top: -5px;
+  /*top: calc(100% + 5px);*/
 }
 [data-tooltip][data-flow="bottom"]::before,
 [data-tooltip][data-flow="bottom"]::after {

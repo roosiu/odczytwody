@@ -5,7 +5,6 @@ if (isset($_POST['done'])) {
 
 
     $table_name = filter_var($_POST['table_name'], FILTER_SANITIZE_STRING);
-    $tag = filter_var($_POST['tag'], FILTER_SANITIZE_STRING);
     $column =  filter_var($_POST['column'], FILTER_SANITIZE_STRING);
    /// $where =  filter_var($_POST['where'], FILTER_SANITIZE_STRING);
     $where = stripslashes(trim($_POST['where']));
@@ -15,7 +14,7 @@ try {
   $stmt->execute();
 
     while ($row = $stmt->fetch()) {
-      echo "<".$tag."> ".$row[0]."</".$tag.">\n";
+      echo $row[0];
     }
 
   } catch (\Exception $e) {

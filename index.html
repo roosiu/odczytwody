@@ -44,10 +44,7 @@
           <p>Wybierz miejscowość</p>
           <div class="selectdiv">
             <label>
-              <select id="address_val_1" onchange="check_text( 1 )">
-                <option value=""></option>
-                <option value="Gniewkowo">Gniewkowo</option>
-              </select>
+              <select id="address_val_1" onchange="check_text( 1 )"></select>
             </label>
             <span
               id="tooltip_1"
@@ -65,10 +62,7 @@
           <p>Wybierz ulicę</p>
           <div class="selectdiv">
             <label>
-              <select id="address_val_2">
-                <option value=""></option>
-                <option value="Dreckiego">Dreckiego</option>
-              </select>
+              <select id="address_val_2" onchange="check_text( 2 )"></select>
             </label>
             <span
               id="tooltip_2"
@@ -86,17 +80,26 @@
         </div>
         <!--street number-->
         <div id="div_3" class="hide">
-          <p>Wybierz numer budynku</p>
-          <div class="selectdiv">
+          <p>
+            Wpisz numer<br />
+            mieszkania
+          </p>
+          <div>
             <label>
-              <select id="address_val_3"></select>
-            </label>
+              <input
+                type="number"
+                class="input"
+                id="address_val_3"
+                min="1"
+                onkeyup="check_number( 3 )"
+            /></label>
             <span
               id="tooltip_3"
-              data-tooltip="Wybierz ulicę"
+              data-tooltip="Wpisz numer"
               data-flow="bottom"
               class="hide"
             ></span>
+
             <button class="button-53 bsmall" onclick="btn_next( 3 )">
               Dalej
             </button>
@@ -105,11 +108,31 @@
             </button>
           </div>
         </div>
+        <!--enter water stats-->
+        <div id="div_4" class="hide">
+          <p>Podaj stan</p>
+          <div id="zw_div_1">
+            <div>
+              <label>
+                <input type="number" class="input" id="zw_val_1" min="0"
+              /></label>
+              <span
+                id="tooltip_zw_1"
+                data-tooltip="Wpisz stan"
+                data-flow="bottom"
+                class="hide"
+              ></span>
+            </div>
+            <button class="button-53 bsmall">Dalej</button>
+            <button class="button-53 bsmall" onclick="btn_prev( 4 )">
+              Cofnij
+            </button>
+          </div>
+        </div>
         <!--header end-->
       </header>
-      <div id="responsecontainer"></div>
       <!--footer-->
-      <div class="Footer">
+      <div id="footer" class="Footer">
         Kujawska Spółdzielnia Mieszkaniowa w Inowrocławiu
       </div>
     </div>
