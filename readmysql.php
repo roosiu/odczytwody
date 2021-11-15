@@ -20,7 +20,7 @@ try {
 
   } catch (\Exception $e) {
     echo json_encode(["message" => $e->getMessage() ]); // sends error response to front-end
-    echo $query;
+
   }
 
 

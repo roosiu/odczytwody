@@ -196,3 +196,23 @@ select::-ms-expand {
   -ms-word-break: normal;
   word-break: normal;
 }
+
+.water_input_div_left {
+  float: left;
+  height: 50px;
+  margin: 5px 0px;
+  border: 1px solid #cccccc;
+}
+.water_input_div_right {
+  float: left;
+}
+
+#summary_div {
+  text-align: center;
+}
+
+.logoSmall {
+  width: 8vh;
+  margin-top: 14px;
+  margin-bottom: 14px;
+}

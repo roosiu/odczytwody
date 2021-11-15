@@ -19,6 +19,7 @@ function readmysql(column, table_name, where, target_element_id, tag){
     });
 }
 
+
 function addAttrFromMysql(column, table_name, where, target_element_id, attr, addedText){
     $.ajax({
         type: "POST",
@@ -40,4 +41,6 @@ function addAttrFromMysql(column, table_name, where, target_element_id, attr, ad
 
     });
 }
+
+
 console.log("mysql.js included");
