@@ -77,13 +77,19 @@ function addToMysql(table_name, number, type, street, local, city, indeks, stat,
           "indeks": indeks,
           "stat": stat
         },
-        dataType: "html",   //expect html to be returned
-        success: function(response){
-            $(target_element_id).html(response);
+    success: function(data) {
 
-        }
+      const respose = JSON.parse(data);
 
-    });
+      if (respose.message === 'success') { // data was inserted
+
+        $(target_element_id).html(respose.message);
+      }else {
+        alert(respose.message); // some error has occured
+      }
+
+    }
+});
 }
 
 
