@@ -24,9 +24,15 @@ function btn_next( page ){
         readmysql('indeks',($("#address_val_" + (page-2)).val().toLowerCase())+'_street','name = "'+($("#address_val_" + (page-1)).val())+'"','#summary_indeks_span', 'b');
         $("#summary_indeks_span b").append("-" + count_local_number($("#address_val_" + (page)).val()));
         console.log($("#summary_indeks_span b").html());
-        createWaterMeterInput('32','#footer');
+        createWaterMeterInput($("#summary_indeks_span b").html(),'#water_meter_div');//// create input with water meter from mySQL
       }
     }
+  }
+
+  function send_stat(){
+    console.log("TODO send_stat function");
+    addToMysql('odczytynowe', 'number', 'ZW', 'Dreckiego 1', '3', 'Gniewkowo', '04343', '234', '#div_4');
+   /// addToMysql('odczytynowe',number?, '#div_4');
   }
 
   function btn_prev( page ){

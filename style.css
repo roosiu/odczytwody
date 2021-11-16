@@ -216,3 +216,18 @@ select::-ms-expand {
   margin-top: 14px;
   margin-bottom: 14px;
 }
+
+.number_of_water_meter {
+  color: #ffffff;
+  font-size: small;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-radius: 3px;
+}
+
+.cw {
+  background-color: #d40000;
+}
+.zw {
+  background-color: #27aae1;
+}
