@@ -31,8 +31,9 @@ function btn_next( page ){
 
   function send_stat(){
     console.log("TODO send_stat function");
+    //// TODO search indeks and water meter from input
     addToMysql('odczytynowe', 'number', 'ZW', 'Dreckiego 1', '3', 'Gniewkowo', '04343', '234', '#div_4');
-   /// addToMysql('odczytynowe',number?, '#div_4');
+
   }
 
   function btn_prev( page ){

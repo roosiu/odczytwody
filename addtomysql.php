@@ -15,8 +15,8 @@ if (isset($_POST['done'])) {
 
  try {
 
-  $stmt = $db->prepare("INSERT INTO ".$table_name."(`Nr wodomierza`,	`Typ wodomierza`,	`Ulica i nr bud.`,	`Nr lok.`,	`Miejscowość`,	`Nazwisko`,	`Indeks lokalu`,	`stan`) VALUES(?, ?, ?, ?, ?, ?, ?, ?)");
-  $stmt->execute(array($number,$type,$street,$local,$city,"dupek",$indeks,$stat));
+  $stmt = $db->prepare("INSERT INTO ".$table_name." VALUES(?, ?, ?, ?, ?, ?, ?, ?)");
+  $stmt->execute(array($number,$type,$street,$local,$city,'',$indeks,$stat));
 
   echo json_encode(["message" => "success"]); // sends success response to front-end
 
@@ -25,5 +25,5 @@ if (isset($_POST['done'])) {
 }
 $stmt->close();
 
-//}
+}
  ?>
