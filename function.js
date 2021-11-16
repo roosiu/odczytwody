@@ -18,13 +18,13 @@ function btn_next( page ){
         $("#address_val_" + (page+1)).val('');
       }
       if(page==3){ //// check number of water meter and show input
-        console.log("count mysql function");
         $(".App-logo").addClass("logoSmall"); /// hide logo
         $("#summary_div").removeClass("hide"); //// show summary
         $("#summary_address_div").html( "Wybrano: <b>" + $("#address_val_" + (page-2)).val() + ", ul. " +  $("#address_val_" + (page-1)).val() + "/" + $("#address_val_" + (page)).val()+"</b>");
         readmysql('indeks',($("#address_val_" + (page-2)).val().toLowerCase())+'_street','name = "'+($("#address_val_" + (page-1)).val())+'"','#summary_indeks_span', 'b');
         $("#summary_indeks_span b").append("-" + count_local_number($("#address_val_" + (page)).val()));
         console.log($("#summary_indeks_span b").html());
+        createWaterMeterInput('32','#footer');
       }
     }
   }
@@ -58,7 +58,7 @@ function btn_next( page ){
     }
   }
 
-  function count_local_number(x){
+  function count_local_number(x){ //// add 0 to local number
     if (x.length==1){
       x = '00'+x
     }
@@ -67,4 +67,6 @@ function btn_next( page ){
     }
     return x;
   }
+
+
 console.log("function.js included");
