@@ -81,9 +81,11 @@ function addToMysql(table_name, number, type, street, local, city, indeks, stat,
 					var dataResult = JSON.parse(dataResult);
 					if(dataResult.statusCode==200){
 						console.log("ok");
+                        $(target_element_id).html("Odczyt został wysłany. Dziękujemy");
 					}
 					else if(dataResult.statusCode==201){
-					   alert("Error occured !");
+                        $(target_element_id).html("Błąd wysyłania. Spróbuj ponownie później");
+
 					}
         }
 });

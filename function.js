@@ -31,7 +31,9 @@ function btn_next( page ){
 
   function send_stat(){
     console.log("TODO send_stat function");
-    //// TODO search indeks and water meter from input
+    //// TODO search input and add stat
+    $("#summary_div").addClass("hide");
+    $(".App-logo").removeClass("logoSmall");
     addToMysql('odczytynowe', 'number', 'ZW', 'Dreckiego 1', '3', 'Gniewkowo', '04343', '234', '#div_4');
 
   }
