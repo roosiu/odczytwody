@@ -1,4 +1,4 @@
-function readmysql(column, table_name, where, target_element_id, tag){
+﻿function readmysql(column, table_name, where, target_element_id, tag){
     $.ajax({
         type: "POST",
         url: "readmysql.php",
@@ -77,18 +77,15 @@ function addToMysql(table_name, number, type, street, local, city, indeks, stat,
           "indeks": indeks,
           "stat": stat
         },
-    success: function(data) {
-
-      const respose = JSON.parse(data);
-
-      if (respose.message === 'success') { // data was inserted
-
-        $(target_element_id).html(respose.message);
-      }else {
-        alert(respose.message); // some error has occured
-      }
-
-    }
+        success: function(dataResult){
+					var dataResult = JSON.parse(dataResult);
+					if(dataResult.statusCode==200){
+						console.log("ok");
+					}
+					else if(dataResult.statusCode==201){
+					   alert("Error occured !");
+					}
+        }
 });
 }
 

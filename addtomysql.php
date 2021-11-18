@@ -1,9 +1,6 @@
-<?php
-
+﻿<?php
 include("config.php");
 if (isset($_POST['done'])) {
-
-
  $table_name = filter_var($_POST['table_name'], FILTER_SANITIZE_STRING);
  $number = filter_var($_POST['number'], FILTER_SANITIZE_STRING);
  $type = filter_var($_POST['type'], FILTER_SANITIZE_STRING);
@@ -13,17 +10,11 @@ if (isset($_POST['done'])) {
  $indeks = filter_var($_POST['indeks'], FILTER_SANITIZE_STRING);
  $stat = filter_var($_POST['stat'], FILTER_SANITIZE_STRING);
 
- try {
-
-  $stmt = $db->prepare("INSERT INTO ".$table_name." VALUES(?, ?, ?, ?, ?, ?, ?, ?)");
+  if($stmt = $db->prepare("INSERT INTO ".$table_name." VALUES(?, ?, ?, ?, ?, ?, ?, ?)")){
   $stmt->execute(array($number,$type,$street,$local,$city,'',$indeks,$stat));
-
-  echo json_encode(["message" => "success"]); // sends success response to front-end
-
-} catch (\Exception $e) {
-  echo json_encode(["message" => $e->getMessage() ]); // sends error response to front-end
+  echo json_encode(array("statusCode"=>200)); // sends success response to front-end
+} else {
+  echo json_encode(array("statusCode"=>201)); // sends error response to front-end
 }
-$stmt->close();
-
 }
- ?>
+?>
